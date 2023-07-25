@@ -4,6 +4,8 @@ import mongoose from "mongoose";
 import { userRouter } from "./routes/users.js";
 import { recipesRouter } from "./routes/recipes.js";
 
+const PORT=process.env.PORT || 3001
+
 const app = express();
 
 app.use(express.json());//whenever we will get data from frontend it will convert it into json.without this you can recive.
@@ -21,4 +23,4 @@ mongoose.connect(
   }
 );
 
-app.listen(3001, () => console.log("Server started"));
+app.listen(PORT, () => console.log("Server started"));
